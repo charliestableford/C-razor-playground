@@ -2,38 +2,34 @@
     ViewData["Title"] = "Home Page";
 }
 
+
 @{
-var txt = "";
-if(DateTime.Now.Hour > 12)
-  {txt = "Good Evening";}
+//checking the time of day
+var timeOfDayMsg = "";
+@if(DateTime.Now.Hour > 12)
+  {timeOfDayMsg = "Hey there, Good Evening";}
 else
-  {txt = "Good Morning";}
+  {timeOfDayMsg = "Hey there, Good Morning";}
+
+// reading message from input
+@* var message = "";
+@if(IsPost)
+    {
+    var firstName = Request["name"];
+    message = @txt +" "+ firstName;
+    }
+
 }
-<p>@txt </p>
 
 <form action="" method="post">
 <p><label for="name">Please enter your name</label><br>
 <input type="text" name="name" placeholder="First Name"></p>
-<p><input type="submit" value="Submit"></p>
+<p><input type="submit" value="submit"></p>
 </form>
+<p>@message</p> *@
 
-
-@* <table border="1">
-<tr>
-<th width="100px">Value</th>
-<td width="100px">Details</td>
-</tr>
-<tr>
-<td>Day</td><td>@DateTime.Now.Day</td>
-</tr>
-<tr>
-<td>Hour</td><td>@DateTime.Now.Hour</td>
-</tr>
-<tr>
-<td>Minute</td><td>@DateTime.Now.Minute</td>
-</tr>
-<tr>
-<td>Second</td><td>@DateTime.Now.Second</td>
-</tr>
-</td>
-</table> *@
+<html>
+    <body>
+        <p>@timeOfDayMsg</p>
+    </body>
+</html>

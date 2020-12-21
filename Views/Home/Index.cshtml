@@ -2,8 +2,23 @@
     ViewData["Title"] = "Home Page";
 }
 
+@{
+var txt = "";
+if(DateTime.Now.Hour > 12)
+  {txt = "Good Evening";}
+else
+  {txt = "Good Morning";}
+}
+<p>@txt </p>
 
-<table border="1">
+<form action="" method="post">
+<p><label for="name">Please enter your name</label><br>
+<input type="text" name="name" placeholder="First Name"></p>
+<p><input type="submit" value="Submit"></p>
+</form>
+
+
+@* <table border="1">
 <tr>
 <th width="100px">Value</th>
 <td width="100px">Details</td>
@@ -21,13 +36,4 @@
 <td>Second</td><td>@DateTime.Now.Second</td>
 </tr>
 </td>
-</table>
-
-@{
-var txt = "";
-if(DateTime.Now.Hour > 12)
-  {txt = "Good Evening";}
-else
-  {txt = "Good Morning";}
-}
-<p>@txt</p>
+</table> *@

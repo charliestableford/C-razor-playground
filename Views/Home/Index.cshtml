@@ -1,8 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-
 @{
 //checking the time of day
 var timeOfDayMsg = "";
@@ -11,13 +9,15 @@ var timeOfDayMsg = "";
 else
   {timeOfDayMsg = "Hey there, Good Morning";}
 
+
 // reading message from input
-@* var message = "";
+var message = "";
 @if(IsPost)
     {
     var firstName = Request["name"];
-    message = @txt +" "+ firstName;
+    message = @timeOfDayMsg +" "+ firstName;
     }
+    
 
 }
 
@@ -26,10 +26,19 @@ else
 <input type="text" name="name" placeholder="First Name"></p>
 <p><input type="submit" value="submit"></p>
 </form>
-<p>@message</p> *@
+<p>@message</p>
 
 <html>
     <body>
+        <div class="container">
         <p>@timeOfDayMsg</p>
+        <p>This is a simple OMBD Application built using C# Razor, JQuery and JS.</p>
+        <form>
+		<input type="text" />
+		<button>Search</button>
+
+        <div class="results"></div>
+	    </form>	
+        </div>
     </body>
-</html>
+</html> 
